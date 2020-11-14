@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: transparent linear-gradient(119deg, #011012 0%, #061517 100%, #142224 100%, #555F60 100%)
+    0% 0% no-repeat padding-box;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 50vw;
+    text-align: center;
+}
+
+.login-container {
+    width: 50vw;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
