@@ -14,9 +14,17 @@ body {
     align-items: center;
 }
 
-.logo {
+.logoPart2 {
     width: 50vw;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font: normal normal normal 150px/56px Comic Sans MS;
+    text-shadow: 0px 0px 10px #00FFB1;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #00ffb1;
+    color: #1E6F56;
 }
 
 .login-container {
@@ -27,5 +35,40 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: start;
+    border: none;
+}
+
+button {
+    background: transparent linear-gradient(119deg, #011012 0%, #061517 100%, #142224 100%, #555F60 100%);
+    width: 25%;
+    height: 50%;
+    margin: 1em;
+    margin-left: 3em;
+    box-shadow: 0px 0px 10px #00FFB1;
+    border: 3px solid #1E6F56;
+    border-radius: 50px;
+
+    text-align: center;
+    font-family: Krungthep;
+    font-size: 200%;
+    letter-spacing: 1px;
+    color: #1E6F56;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: #00ffb1;
+}
+
+input {
+    padding: 1em;
+    margin: 1em;
+    width: 50%;
+    margin-left: 7em;
+    border-block-start: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: #00ffb1;
+    border-block-end-width: 2px;
+    background-color: transparent;
+    mso-border-shadow: yes;
+
 }
