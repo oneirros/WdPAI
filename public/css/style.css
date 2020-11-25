@@ -14,18 +14,18 @@ body {
     align-items: center;
 }
 
-.logoPart2 {
+.logo {
     width: 50vw;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    font: normal normal normal 150px/56px Comic Sans MS;
-    text-shadow: 0px 0px 10px #00FFB1;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #00ffb1;
-    color: #1E6F56;
 }
+.logo img {
+    height: 35vh;
+}
+
+
 
 .login-container {
     width: 50vw;
@@ -39,14 +39,21 @@ form {
     border: none;
 }
 
+.login-logup {
+    display: flex;
+    flex-direction: row;
+    justify-items: start;
+    align-items: center;
+}
+
 button {
     background: transparent linear-gradient(119deg, #011012 0%, #061517 100%, #142224 100%, #555F60 100%);
     width: 25%;
     height: 50%;
     margin: 1em;
     margin-left: 3em;
-    box-shadow: 0px 0px 10px #00FFB1;
-    border: 3px solid #1E6F56;
+    box-shadow: 0px 0px 10px #00ffb1;
+    border: 3px solid #1e6f56;
     border-radius: 50px;
 
     text-align: center;
@@ -70,5 +77,39 @@ input {
     border-block-end-width: 2px;
     background-color: transparent;
     mso-border-shadow: yes;
+}
 
+@media only screen and (max-device-width: 420px) {
+    .container{
+        margin: 0;
+        flex-direction: column;
+
+    }
+
+    * {
+        font-size: 36px;
+    }
+
+    .logo {
+        width: 100%;
+        height: 25%;
+    }
+
+    .logo img {
+        width: 70vw;
+        margin-left: 1.5em ;
+    }
+
+    .login-container {
+        width: 100%;
+        height: 75%;
+    }
+
+    .login-logup button {
+        margin: 1em;
+    }
+
+    input {
+        margin-left: 6em;
+    }
 }
