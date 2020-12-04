@@ -145,6 +145,57 @@ input {
     form {
         margin-top: 7vh;
     }
+}
 
+/*---------------------------------------------*/
 
+.base-container {
+    width: 100vw;
+    height: 100vh;
+    background: transparent linear-gradient(119deg, #011012 0%, #061517 100%, #142224 100%, #555F60 100%)
+    0% 0% no-repeat padding-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+nav {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+main {
+    width: 75%;
+    height: 100%;
+}
+
+.small-logo {
+    width: 20vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.small-logo img {
+    width: 10vw;
+}
+
+.map {
+    width: 20vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.map img {
+    width: 10vw;
 }
