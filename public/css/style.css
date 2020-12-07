@@ -55,7 +55,7 @@ form {
 
 }
 
-button {
+button.log-button{
     background: transparent linear-gradient(119deg, #011012 0%, #061517 100%, #142224 100%, #555F60 100%);
     width: 25%;
     height: 50%;
@@ -156,26 +156,31 @@ input {
     0% 0% no-repeat padding-box;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 
 }
 
 nav {
-    width: 25%;
+    width: 20%;
     height: 100%;
+    background: #1A1F1C 0% 0% no-repeat padding-box;
+    border-right: 2px solid #861919;
+
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 main {
-    width: 75%;
+    width: 80%;
     height: 100%;
 }
 
 .small-logo {
-    width: 20vw;
+    width: 10vw;
 
     display: flex;
     flex-direction: column;
@@ -183,12 +188,33 @@ main {
     align-items: center;
 }
 
-.small-logo img {
+.small-logo > img {
     width: 10vw;
 }
 
+.buttons {
+    width: 100%;
+    height: 7%;
+    background: transparent;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.buttons > button {
+    background: transparent;
+    border: none;
+
+    font-size: 4vh;
+    color: #861919;
+    margin-right: 0.5em;
+}
+
 .map {
-    width: 20vw;
+    width: 100%;
+    height: 93%;
 
     display: flex;
     flex-direction: column;
@@ -197,5 +223,6 @@ main {
 }
 
 .map img {
-    width: 10vw;
+    width: 100%;
+    height: 100%;
 }
