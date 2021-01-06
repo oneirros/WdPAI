@@ -260,6 +260,21 @@ li a {
     text-decoration: none;
 }
 
+@media only screen and (max-device-width: 420px) {
+    nav {
+        width: 80%;
+        height: 100%;
+        background: #1A1F1C 0% 0% no-repeat padding-box;
+        border-right: 2px solid #861919;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+}
+
 /*-------------------------------------------------------*/
 
 header {
@@ -277,23 +292,27 @@ header {
     list-style-type: none;
 
     font-size: 1em;
+    font-style: normal;
     color: #6C7673;
 
 }
 
 header i {
     font-size: 1.5em;
+    font-style: normal;
     color: #6C7673;
     margin-right: 0.2em;
 }
 
 
-.pins {
+.places{
     height: 100%;
     width: 100%;
     padding: 0;
     margin-top: 0.5em;
     /*border-top: 2px solid #6C7673;*/
+
+    counter-reset: counter;
 
     color: #6C7673;
     font-size: 1em;
@@ -302,3 +321,45 @@ header i {
     justify-content: flex-start;
     list-style-type: none;
 }
+
+.second{
+    font-size: 0.4em;
+}
+
+.time{
+    display: flex;
+}
+
+.podzielnik {
+    display: block;
+    width: 2px;
+    height: 25px;
+    background: #6C7673;
+}
+
+.places li {
+    display: flex;
+    align-items: center;
+    counter-increment: counter;
+}
+
+.places li::before {
+    content: counter(my-awesome-counter);
+    color: #fcd000;
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: absolute;
+    --size: 32px;
+    left: calc(-1 * var(--size) - 10px);
+    line-height: var(--size);
+    width: var(--size);
+    height: var(--size);
+    top: 0;
+    transform: rotate(-10deg);
+    background: black;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 1px 1px 0 #999;
+}
+
+
