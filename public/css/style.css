@@ -52,7 +52,6 @@ form {
     font-size: 5vh;
     color: #1E6F56;
 
-
 }
 
 button.log-button{
@@ -291,14 +290,14 @@ header {
     /*align-items: center;*/
     list-style-type: none;
 
-    font-size: 1em;
+    font-size: 0.9em;
     font-style: normal;
     color: #6C7673;
 
 }
 
 header i {
-    font-size: 1.5em;
+    font-size: 1.4em;
     font-style: normal;
     color: #6C7673;
     margin-right: 0.2em;
@@ -315,19 +314,33 @@ header i {
     counter-reset: counter;
 
     color: #6C7673;
-    font-size: 1em;
+    font-size: 0.9em;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     list-style-type: none;
 }
 
+.place-number{
+    color: #1E6F56;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: #00ffb1;
+    font-size: 0.9em;
+}
+
+.time-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .second{
-    font-size: 0.4em;
+    font-size: 0.65em;
 }
 
 .time{
     display: flex;
+    font-size: 0.7em;
 }
 
 .podzielnik {
@@ -343,23 +356,84 @@ header i {
     counter-increment: counter;
 }
 
-.places li::before {
-    content: counter(my-awesome-counter);
-    color: #fcd000;
-    font-size: 1.5rem;
-    font-weight: bold;
-    position: absolute;
-    --size: 32px;
-    left: calc(-1 * var(--size) - 10px);
-    line-height: var(--size);
-    width: var(--size);
-    height: var(--size);
-    top: 0;
-    transform: rotate(-10deg);
-    background: black;
-    border-radius: 50%;
-    text-align: center;
-    box-shadow: 1px 1px 0 #999;
+/*co to jest to before*/
+/*.places li::before {*/
+/*    content: counter(my-awesome-counter);*/
+/*    color: #fcd000;*/
+/*    font-size: 1.5rem;*/
+/*    font-weight: bold;*/
+/*    position: absolute;*/
+/*    --size: 32px;*/
+/*    left: calc(-1 * var(--size) - 10px);*/
+/*    line-height: var(--size);*/
+/*    width: var(--size);*/
+/*    height: var(--size);*/
+/*    top: 0;*/
+/*    transform: rotate(-10deg);*/
+/*    background: black;*/
+/*    border-radius: 50%;*/
+/*    text-align: center;*/
+/*    box-shadow: 1px 1px 0 #999;*/
+/*}*/
+
+/*--------------------------------trip_info------------------------------*/
+
+.trip-place{
+    height: 7%;
+    width: 90%;
+    padding: 0;
+    margin-top: 0.5em;
+    margin-left: 0.6em;
+
+    border-bottom: 2px solid #861919;
+
+    counter-reset: counter;
+
+    color: #6C7673;
+    font-size: 1.1em;
+    font-style: normal;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
 }
+
+.trip-info{
+    height: 80%;
+    width: 100%;
+}
+
+textarea {
+    height: 98%;
+    width: 90%;
+    background: transparent;
+    color: #6C7673;
+    margin-left: 0.6em;
+    border-width: 0px;
+    font-family: "Apple Braille";
+
+}
+
+.ticket-button {
+    background: transparent linear-gradient(119deg, #011012 0%, #061517 100%, #142224 100%, #555F60 100%);
+    margin: 1em;
+    margin-left: 3em;
+    box-shadow: 0px 0px 10px #00ffb1;
+    border: 3px solid #1e6f56;
+    border-radius: 50px;
+
+    text-align: center;
+    font-family: Krungthep;
+    font-size: 1em;
+    letter-spacing: 1px;
+    color: #1E6F56;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: #00ffb1;
+}
+
+a:link{
+    text-decoration: none;
+}
+
 
 
