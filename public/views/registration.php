@@ -11,10 +11,10 @@
     </div>
     <div class="registration-container">
         <div class="login-logup">
-            <i class="fas fa-circle-notch"></i>
-            <button class="log-button">Log in</button>
-            <i class="fas fa-circle-notch"></i>
-            <button class="log-button">Log up</button>
+            <a href="/">
+                <i class="fas fa-circle-notch"></i>
+                <button class="log-button">Log in</button>
+            </a>
         </div>
         <form>
             <input name="name" type="text" placeholder="name">

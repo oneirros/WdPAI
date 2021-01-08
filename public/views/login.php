@@ -20,13 +20,10 @@
                 ?>
             </div>
             <div class="login-logup">
-                <i class="fas fa-circle-notch"></i>
-                <button class="log-button">Log in</button>
-<!--                <a href="login.php">Log in</a>-->
-                <i class="fas fa-circle-notch"></i>
-                <button class="log-button" >Log up</button>
-<!--                <a href="public/views/registration.php">Log up</a>-->
-
+                <a href="/registration">
+                    <i class="fas fa-circle-notch"></i>
+                    <button class="log-button">Sign up</button>
+                </a>
             </div>
             <form action="login" method="POST">
                 <input name="email" type="text" placeholder="email@email.com">
