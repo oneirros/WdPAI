@@ -13,7 +13,7 @@
         <div class="login-logup">
             <a href="/">
                 <i class="fas fa-circle-notch"></i>
-                <button class="log-button">Log in</button>
+                <button class="sign-up-button">Log in</button>
             </a>
         </div>
         <form>
@@ -21,7 +21,7 @@
             <input name="email" type="password" placeholder="email@email.com">
             <input name="password" type="password" placeholder="password">
             <input name="confirm-password" type="password" placeholder="confirm password">
-            <button>login</button>
+            <button class="log-button">login</button>
         </form>
     </div>
 </div>

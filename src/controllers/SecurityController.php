@@ -24,7 +24,7 @@ class SecurityController extends AppController
             return $this->render("login", ['messages' => ["Incorrect password or email!"]]);
         }
 
-        return $this->render("projects");
+        return $this->render("trips");
 
     }
 
