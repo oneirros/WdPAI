@@ -108,11 +108,11 @@ input {
     border-block-end-width: 2px;
     background-color: transparent;
     mso-border-shadow: yes;
-
+    color: #6C7673;
 }
 
 .failure-message {
-    width: 50vw;
+    width: 70vw;
     display: flex;
     flex-direction: row;
     justify-items: start;
@@ -465,5 +465,30 @@ a:link{
     text-decoration: none;
 }
 
+/*-----------------------------add_trip.php-----------------------------*/
 
+.add_trip_form>h1 {
+    background: transparent;
+    width: 10em;
+    height: 50%;
+    margin: 1em;
+    margin-left: 3em;
+    border: none;
 
+    text-align: start;
+    font-family: Krungthep;
+    font-size: 200%;
+    letter-spacing: 1px;
+    color: #1E6F56;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: #00ffb1;
+}
+
+textarea[name="description"]{
+    width: 39.5em;
+    margin-left: 6em;
+    font-size: 0.95em;
+    border-width: 2px;
+    border-color: #00ffb1;
+
+}

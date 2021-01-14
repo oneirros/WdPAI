@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <script src="https://kit.fontawesome.com/e812991b72.js" crossorigin="anonymous"></script>
     <title> TRIPS PAGE</title>
 </head>
@@ -10,7 +10,7 @@
 <div class="base-container">
     <nav>
         <div class="small-logo">
-            <img src="../image/logo.svg">
+            <img src="public/image/logo.svg">
         </div>
         <div class="trip-place">
             <span class="place-number">1</span>
@@ -45,7 +45,7 @@
             <button class="log-off"><i class="far fa-times-circle"></i></button>
         </div>
         <section class="map">
-            <img src="../image/map.svg">
+            <img src="public/image/map.svg">
         </section>
     </main>
 </div>

@@ -15,7 +15,7 @@
             <ul>
                 <li>
                     <i class="fas fa-map-marked-alt"></i>
-                    <a href="#" class="button" >Architektura Slask</a>
+                    <a href="/trip_plan" class="button" >Architektura Slask</a>
                 </li>
                 <li>
                     <i class="fas fa-map-marked-alt"></i>

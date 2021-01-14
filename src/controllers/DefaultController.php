@@ -14,8 +14,13 @@ class DefaultController extends AppController {
         $this->render("registration");
     }
 
-    public function projects() {
+    public function trip_plan() {
 
-        $this->render("projects");
+        $this->render("trip_plan");
     }
+
+    public function trip_info() {
+        $this->render("trip_info");
+    }
+
 }
