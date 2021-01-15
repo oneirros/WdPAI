@@ -1,6 +1,8 @@
 <?php
 
 require_once 'AppController.php';
+require_once __DIR__."/../models/Trip.php";
+require_once __DIR__."/../models/Pin.php";
 
 class TripController extends AppController
 {
@@ -9,12 +11,16 @@ class TripController extends AppController
     const UPLOAD_DIRECTORY = "/../public/uploads/";
 
     private $messages = [];
+    private $trip;
 
 
     public function add_trip() {
 
         if($this->isPost()) {
-            return $this->render("trips");
+
+            $this->trip = new Trip($_POST["title"]);
+
+            return $this->render("trips", ["trip" => $this->trip]);
         }
 
 
@@ -30,7 +36,12 @@ class TripController extends AppController
                 dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES["file"]["name"]
             );
 
-            return $this->render("trip_plan");
+            $pin = new Pin($_POST["destination"], $_POST["arrival-time"], $_POST["departure-time"],
+                $_POST["description"], $_FILES["file"]["name"]);
+
+            $this->trip->addPin($pin);
+
+            return $this->render("trip_plan", ["pin" => $this->trip->getPin(0)]); //czy ty powinno być wyświetlanie całej listy pinów
         }
 
         $this->render("add_pin", ["messages" => $this->messages]);

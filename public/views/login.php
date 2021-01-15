@@ -17,7 +17,7 @@
                     echo $message;
                 }
             }
-            ?>
+            ?>gt
         </div>
         <div class="login-logup">
             <a href="/registration">

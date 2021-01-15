@@ -15,19 +15,27 @@
             <ul>
                 <li>
                     <i class="fas fa-map-marked-alt"></i>
-                    <a href="/trip_plan" class="button" >Architektura Slask</a>
+                    <a href="/trip_plan" class="button" > <?= $trip->getTitle()?> </a>
                 </li>
-                <li>
-                    <i class="fas fa-map-marked-alt"></i>
-                    <a href="#" class="button" >Trasa Rowerowa</a>
-                </li>
+<!--                <li>-->
+<!--                    <i class="fas fa-map-marked-alt"></i>-->
+<!--                    <a href="#" class="button" >Trasa Rowerowa</a>-->
+<!--                </li>-->
             </ul>
         </nav>
         <main>
             <div class="buttons">
                 <button class="listing"><i class="fas fa-list-ul"></i></button>
-                <button class="add-trip"><i class="fas fa-plus"></i></button>
-                <button class="add-pin"><i class="fas fa-crosshairs"></i></button>
+                <a href="/add_trip">
+                    <button class="add-trip">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </a>
+                <a href="/add_pin">
+                    <button class="add-pin">
+                        <i class="fas fa-crosshairs"></i>
+                    </button>
+                </a>
                 <button class="log-off"><i class="far fa-times-circle"></i></button>
             </div>
             <section class="map">

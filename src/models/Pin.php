@@ -4,8 +4,10 @@
 class Pin
 {
     private $destination;
-    private $arrival_time;
-    private $departure_time;
+    private $hour_arrival;
+    private $minute_arrival;
+    private $hour_departure;
+    private $minute_departure;
     private $description;
     private $ticket;
 
@@ -14,10 +16,18 @@ class Pin
                                 string $departure_time, string $description, string $ticket)
     {
         $this->destination = $destination;
-        $this->arrival_time = $arrival_time;
-        $this->departure_time = $departure_time;
         $this->description = $description;
         $this->ticket = $ticket;
+
+        $time = explode(":", $arrival_time);
+        $this->hour_arrival = $time[0];
+        $this->minute_arrival = $time[1];
+
+        unset($time);
+
+        $time = explode(":", $departure_time);
+        $this->hour_departure = $time[0];
+        $this->minute_departure = $time[1];
     }
 
     public function getDestination(): string
@@ -28,26 +38,6 @@ class Pin
     public function setDestination(string $destination)
     {
         $this->destination = $destination;
-    }
-
-    public function getArrivalTime(): string
-    {
-        return $this->arrival_time;
-    }
-
-    public function setArrivalTime(string $arrival_time)
-    {
-        $this->arrival_time = $arrival_time;
-    }
-
-    public function getDepartureTime(): string
-    {
-        return $this->departure_time;
-    }
-
-    public function setDepartureTime(string $departure_time)
-    {
-        $this->departure_time = $departure_time;
     }
 
     public function getDescription(): string
@@ -69,5 +59,47 @@ class Pin
     {
         $this->ticket = $ticket;
     }
+
+    public function getHourArrival(): string
+    {
+        return $this->hour_arrival;
+    }
+
+    public function setHourArrival(string $hour_arrival)
+    {
+        $this->hour_arrival = $hour_arrival;
+    }
+
+    public function getMinuteArrival(): string
+    {
+        return $this->minute_arrival;
+    }
+
+    public function setMinuteArrival(string $minute_arrival)
+    {
+        $this->minute_arrival = $minute_arrival;
+    }
+
+    public function getHourDeparture(): string
+    {
+        return $this->hour_departure;
+    }
+
+    public function setHourDeparture(string $hour_departure)
+    {
+        $this->hour_departure = $hour_departure;
+    }
+
+    public function getMinuteDeparture(): string
+    {
+        return $this->minute_departure;
+    }
+
+    public function setMinuteDeparture(string $minute_departure)
+    {
+        $this->minute_departure = $minute_departure;
+    }
+
+
 
 }

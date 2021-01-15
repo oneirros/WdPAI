@@ -12,16 +12,6 @@
         <div class="small-logo">
             <img src="public/image/logo.svg">
         </div>
-        <ul>
-            <li>
-                <i class="fas fa-map-marked-alt"></i>
-                <a href="/trip_plan" class="button" >Architektura Slask</a>
-            </li>
-            <li>
-                <i class="fas fa-map-marked-alt"></i>
-                <a href="#" class="button" >Trasa Rowerowa</a>
-            </li>
-        </ul>
     </nav>
     <main>
         <section class="add_trip_form">

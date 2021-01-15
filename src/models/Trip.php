@@ -1,6 +1,8 @@
 <?php
 
 require_once "Pin.php";
+
+
 class Trip
 {
     private $title;
@@ -12,9 +14,24 @@ class Trip
         $this->title = $title;
     }
 
-    public function add_pin($pin) {
+    public function getTitle(): string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(string $title)
+    {
+        $this->title = $title;
+    }
+
+    public function addPin(Pin $pin)
+    {
         $pins[] = $pin;
     }
 
+    public function getPin(int $key): Pin
+    {
+        return pins[$key];
+    }
 
 }
