@@ -2,19 +2,27 @@
 
 require_once 'AppController.php';
 require_once __DIR__."/../models/User.php";
+require_once __DIR__.'/../repository/UserRepository.php';
+require_once __DIR__.'/../repository/TripRepository.php';
 
 class SecurityController extends AppController
 {
-    public function login() {
+    public function login()
+    {
+        $userRepository = new UserRepository();
 
-        $user = new User("jacek@jacek.com", "jacek5", "jacek");
-
-//        if ($this->isPost()) {
-//            return $this->login("login");
-//        }
+        if (!$this->isPost()) {
+            return $this->render("login");
+        }
 
         $email = $_POST["email"];
         $password = $_POST["password"];
+
+        $user = $userRepository->getUser($email);
+
+        if (!$user) {
+            return $this->render("login", ['messages' => ["User not exist!"]]);
+        }
 
         if ($user->getEmail() !== $email) {
             return $this->render("login", ['messages' => ["Incorrect password or email!"]]);
@@ -24,7 +32,8 @@ class SecurityController extends AppController
             return $this->render("login", ['messages' => ["Incorrect password or email!"]]);
         }
 
-        return $this->render("trips");
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/trips");
 
     }
 

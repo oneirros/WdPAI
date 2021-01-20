@@ -1,8 +1,12 @@
 <?php
 
+session_start();
+
 require_once 'AppController.php';
 require_once __DIR__."/../models/Trip.php";
 require_once __DIR__."/../models/Pin.php";
+require_once __DIR__."/../repository/TripRepository.php";
+
 
 class TripController extends AppController
 {
@@ -12,22 +16,45 @@ class TripController extends AppController
 
     private $messages = [];
     private $trip;
+    private $tripRepository;
+
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->tripRepository = new TripRepository();
+    }
+
+    public function trips() {
+
+        $this->render("trips", ["trips" => $this->tripRepository->getTrips()]);
+    }
+
+    public function trip_plan(int $trip_ID) {
+
+        $this->render("trip_plan", ["pins" => $this->tripRepository->getPins($trip_ID)]);
+    }
+
+    public function trip_info(int $id_pin) {
+        $this->render("trip_info", ["pin" => $this->tripRepository->getPin($id_pin)]);
+    }
 
 
     public function add_trip() {
 
         if($this->isPost()) {
 
-            $this->trip = new Trip($_POST["title"]);
+            $this->trip = new Trip(null, $_POST["title"]);
+            $this->tripRepository->addTrip($this->trip);
 
-            return $this->render("trips", ["trip" => $this->trip]);
+            return $this->render("trips", ["trips" => $this->tripRepository->getTrips()]);
         }
 
 
         $this->render("add_trip");
     }
 
-    public function add_pin() {
+    public function add_pin($trip_ID) {
 
         if($this->isPost() && is_uploaded_file($_FILES["file"]["tmp_name"]) && $this->validate($_FILES["file"])) {
 
@@ -39,9 +66,9 @@ class TripController extends AppController
             $pin = new Pin($_POST["destination"], $_POST["arrival-time"], $_POST["departure-time"],
                 $_POST["description"], $_FILES["file"]["name"]);
 
-            $this->trip->addPin($pin);
+            $this->tripRepository->addPin($pin);
 
-            return $this->render("trip_plan", ["pin" => $this->trip->getPin(0)]); //czy ty powinno być wyświetlanie całej listy pinów
+            return $this->render("trip_plan", ["pins" => $this->tripRepository->getPins($_SESSION["id_trip"])]);
         }
 
         $this->render("add_pin", ["messages" => $this->messages]);

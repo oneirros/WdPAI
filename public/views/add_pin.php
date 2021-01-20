@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css">
     <script src="https://kit.fontawesome.com/e812991b72.js" crossorigin="anonymous"></script>
     <title> TRIPS PAGE</title>
 </head>
@@ -10,7 +10,7 @@
 <div class="base-container">
     <nav>
         <div class="small-logo">
-            <img src="public/image/logo.svg">
+            <img src="/public/image/logo.svg">
         </div>
     </nav>
     <main>

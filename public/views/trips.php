@@ -13,25 +13,27 @@
                 <img src="public/image/logo.svg">
             </div>
             <ul>
+                <?php foreach ($trips as $trip): ?>
                 <li>
                     <i class="fas fa-map-marked-alt"></i>
-                    <a href="/trip_plan" class="button" > <?= $trip->getTitle()?> </a>
+                    <a href="/trip_plan/<?=$trip->getID()?>" class="button"> <?= $trip->getTitle()?> </a>
                 </li>
-<!--                <li>-->
-<!--                    <i class="fas fa-map-marked-alt"></i>-->
-<!--                    <a href="#" class="button" >Trasa Rowerowa</a>-->
-<!--                </li>-->
+                <?php endforeach; ?>
             </ul>
         </nav>
         <main>
             <div class="buttons">
-                <button class="listing"><i class="fas fa-list-ul"></i></button>
+                <a href="/trips">
+                    <button class="listing">
+                        <i class="far fa-arrow-alt-circle-left"></i>
+                    </button>
+                </a>
                 <a href="/add_trip">
                     <button class="add-trip">
                         <i class="fas fa-plus"></i>
                     </button>
                 </a>
-                <a href="/add_pin">
+                <a href="">
                     <button class="add-pin">
                         <i class="fas fa-crosshairs"></i>
                     </button>

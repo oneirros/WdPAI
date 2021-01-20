@@ -232,7 +232,7 @@ main {
     align-items: flex-end;
 }
 
-.buttons > button {
+.buttons > a > button {
     background: transparent;
     border: none;
 

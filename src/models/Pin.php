@@ -3,6 +3,7 @@
 
 class Pin
 {
+    private $title;
     private $destination;
     private $hour_arrival;
     private $minute_arrival;
@@ -10,10 +11,11 @@ class Pin
     private $minute_departure;
     private $description;
     private $ticket;
+    private $id_pin;
 
 
-    public function __construct(string $destination, string $arrival_time,
-                                string $departure_time, string $description, string $ticket)
+    public function __construct(?string $destination, ?string $arrival_time,
+                                ?string $departure_time, ?string $description, ?string $ticket)
     {
         $this->destination = $destination;
         $this->description = $description;
@@ -29,6 +31,8 @@ class Pin
         $this->hour_departure = $time[0];
         $this->minute_departure = $time[1];
     }
+
+
 
     public function getDestination(): string
     {
@@ -100,6 +104,15 @@ class Pin
         $this->minute_departure = $minute_departure;
     }
 
+    public function getIdPin(): ?int
+    {
+        return $this->id_pin;
+    }
+
+    public function setIdPin(?int $id_pin): void
+    {
+        $this->id_pin = $id_pin;
+    }
 
 
 }
