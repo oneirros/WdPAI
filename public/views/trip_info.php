@@ -33,7 +33,7 @@
         </div>
         <div>
             <button class="ticket-button">
-                <a href="#">Ticket</a>
+                <a href="/ticket">Ticket</a>
             </button>
         </div>
     </nav>
@@ -44,17 +44,21 @@
                     <i class="far fa-arrow-alt-circle-left"></i>
                 </button>
             </a>
-            <a href="">
-                <button class="add-trip">
+            <a>
+                <button class="">
                     <i class="fas fa-plus"></i>
                 </button>
             </a>
-            <a href="/add_pin/<?=$_SESSION["id_trip"]?>">
+            <a>
                 <button class="add-pin">
                     <i class="fas fa-crosshairs"></i>
                 </button>
             </a>
-            <button class="log-off"><i class="far fa-times-circle"></i></button>
+            <a href="/logout">
+                <button class="log-off">
+                    <i class="far fa-times-circle"></i>
+                </button>
+            </a>
         </div>
         <section class="map">
             <img src="/public/image/map.svg">

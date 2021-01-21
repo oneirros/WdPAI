@@ -141,13 +141,18 @@ class TripRepository extends Repository
             return null;
         }
 
-        return new Pin(
+        $new_pin =  new Pin(
             $pin["destination"],
             $pin["hour_arrival"].":".$pin["minute_arrival"],
             $pin["hour_departure"].":".$pin["minute_departure"],
             $pin["description"],
             $pin["ticket"]
         );
+
+       $new_pin->setIdPin($id_pin);
+
+        return $new_pin;
+
     }
 
     public function addPin(Pin $pin){
@@ -172,5 +177,51 @@ class TripRepository extends Repository
 
     }
 
+    public function getTripByTitle(string $searchString)
+    {
+        $searchString = '%' . strtolower($searchString) . '%';
+
+        $assignedByID = $_SESSION["id_users"];
+
+        $stmt = $this->database->connect()->prepare("
+            SELECT * FROM trips WHERE LOWER(title) LIKE :search AND id_assigned_by = $assignedByID
+        ");
+        $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getPinByTitle(string $searchString)
+    {
+        $searchString = '%' . strtolower($searchString) . '%';
+
+        $assignedByID = $_SESSION["id_users"];
+
+        $stmt = $this->database->connect()->prepare("
+            SELECT * FROM pins WHERE LOWER(destination) LIKE :search AND id_assigned_by = $assignedByID
+        ");
+        $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getTicket(int $id_pin)
+    {
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM pins WHERE id_pin = :id_pin
+        ');
+        $stmt->bindParam(':id_pin', $id_pin, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $pin = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($pin == false) {
+            return null;
+        }
+
+        return $pin["ticket"];
+    }
 }
 

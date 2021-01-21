@@ -2,6 +2,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <script src="https://kit.fontawesome.com/e812991b72.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./public/js/script.js" defer></script>
     <title> REGISTRATION PAGE </title>
 </head>
 <body>
@@ -16,12 +17,12 @@
                 <button class="sign-up-button">Log in</button>
             </a>
         </div>
-        <form>
+        <form action="register" method="POST">
             <input name="name" type="text" placeholder="name">
-            <input name="email" type="password" placeholder="email@email.com">
+            <input name="email" type="text" placeholder="email@email.com">
             <input name="password" type="password" placeholder="password">
             <input name="confirm-password" type="password" placeholder="confirm password">
-            <button class="log-button">login</button>
+            <button class="log-button" type="submit">register</button>
         </form>
     </div>
 </div>

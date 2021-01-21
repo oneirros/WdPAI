@@ -33,4 +33,45 @@ class UserRepository extends Repository
         );
     }
 
+    public function addUser(string $name, string $email, string $password)
+    {
+        $date = new DateTime();
+        $stmt = $this->database->connect()->prepare("
+            INSERT INTO users_details (name, phone)
+            VALUES (?, ?)
+        ");
+
+        $stmt->execute([
+            $name,
+            null
+        ]);
+
+        $stmt = null;
+
+        $stmt = $this->database->connect()->prepare("
+            SELECT * FROM users_details ORDER BY id_users_details DESC LIMIT 1
+        ");
+
+        $stmt->execute();
+
+        $users_details = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $stmt = null;
+
+        $stmt = $this->database->connect()->prepare("
+            INSERT INTO users (email, password, enabled, created_tm, id_user_details)
+            VALUES (?, ?, ?, ?, ?)
+        ");
+
+        $stmt->execute([
+            $email,
+            $password,
+            true,
+            $date->format("Y-m-d"),
+            $users_details["id_users_details"]
+        ]);
+
+
+    }
+
 }

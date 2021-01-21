@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/public/css/style.css">
     <script src="https://kit.fontawesome.com/e812991b72.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./public/js/search_pin.js" defer></script>
     <title> TRIP PLAN PAGE</title>
 </head>
 
@@ -38,12 +39,15 @@
     </nav>
     <main>
         <div class="buttons">
+            <div class="search-bar">
+                <input placeholder="search pin">
+            </div>
             <a href="/trips">
                 <button class="listing">
                     <i class="far fa-arrow-alt-circle-left"></i>
                 </button>
             </a>
-            <a href="">
+            <a>
                 <button class="add-trip">
                     <i class="fas fa-plus"></i>
                 </button>
@@ -53,7 +57,11 @@
                     <i class="fas fa-crosshairs"></i>
                 </button>
             </a>
-            <button class="log-off"><i class="far fa-times-circle"></i></button>
+            <a href="/logout">
+                <button class="log-off">
+                    <i class="far fa-times-circle"></i>
+                </button>
+            </a>
         </div>
         <section class="map">
             <img src="/public/image/map.svg">
@@ -61,3 +69,5 @@
     </main>
 </div>
 </body>
+
+

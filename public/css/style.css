@@ -124,6 +124,10 @@ input {
 
 }
 
+.search-bar > input {
+    border-bottom-color: #861919;
+}
+
 @media only screen and (max-device-width: 420px) {
     .container{
         margin: 0;
@@ -491,4 +495,11 @@ textarea[name="description"]{
     border-width: 2px;
     border-color: #00ffb1;
 
+}
+
+.no-valid {
+    border: 3px solid #861919;
+    border-radius: 1em;
+    box-shadow: 0 0 0.2em #861919;
+    outline: none;
 }
